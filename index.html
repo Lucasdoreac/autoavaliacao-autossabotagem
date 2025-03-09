@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autoavaliação de Autossabotagem</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Autoavaliação de Autossabotagem <span class="flag">🚩</span></h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Seção de introdução -->
+        <section id="intro" class="card">
+            <h2>Bem-vindo à Autoavaliação Científica de Autossabotagem</h2>
+            <p class="description">
+                Este questionário abrangente ajuda a identificar em que medida você pode estar sabotando a si mesmo em diversas áreas da vida. Autossabotagem ocorre quando nossas ações ou pensamentos minam nosso próprio progresso e sucesso. Frequentemente, é motivada por medos ou crenças internas negativas que nos levam a procrastinar, duvidar de nós mesmos ou adotar hábitos nocivos. Pesquisas mostram que esses comportamentos podem afetar todas as esferas da vida – carreira, relacionamentos, saúde e bem-estar.
+            </p>
+            
+            <div class="scientific-basis">
+                <h3><i class="fas fa-flask"></i> Base Científica</h3>
+                <p>
+                    As perguntas a seguir foram elaboradas com base em métodos validados em pesquisas recentes, cobrindo fatores-chave ligados ao sucesso pessoal. Cada seção do questionário corresponde a um domínio crítico identificado pela psicologia do sucesso e do desenvolvimento pessoal.
+                </p>
+                <button id="toggle-science" class="btn-tertiary">Ver base científica detalhada <i class="fas fa-chevron-down"></i></button>
+                <div id="science-details" class="hidden">
+                    <div class="science-item">
+                        <h4>Mentalidade e Crenças Limitantes</h4>
+                        <p>Crenças internas têm grande impacto. Crenças limitantes (como "não sou capaz disso") podem paralisar nosso progresso, tornando-se profecias que barram nossos sonhos. Afirmativas inspiradas no conceito de mindset de Carol Dweck e em terapias cognitivas que identificam pensamentos autoderrotistas.</p>
+                    </div>
+                    <div class="science-item">
+                        <h4>Hábitos e Autodisciplina</h4>
+                        <p>A consistência em hábitos positivos e o autocontrole predizem fortemente o sucesso. Estudos indicam que pessoas com alta autodisciplina (traço de consciência/conscienciosidade) tendem a ter desempenho acadêmico e financeiro melhor e a viver de forma mais saudável. Abordamos aspectos como procrastinação e impulsividade, baseando-nos em escalas de autorregulação usadas na psicologia.</p>
+                    </div>
+                    <div class="science-item">
+                        <h4>Inteligência Emocional e Resiliência</h4>
+                        <p>A capacidade de reconhecer e gerenciar emoções, bem como de se recuperar de fracassos, é crucial. Quem possui inteligência emocional elevada costuma ter menos comportamentos autodestrutivos e maior sucesso no trabalho. Já a resiliência – definida pela APA como o processo de se adaptar com sucesso a desafios e adversidades – atua como fator de proteção contra estresse e burnout, levando a melhores resultados mesmo em ambientes difíceis. As perguntas desta seção refletem escalas de QE (Quociente Emocional) e de resiliência empregadas em estudos psicológicos.</p>
+                    </div>
+                    <div class="science-item">
+                        <h4>Capacidade de Adaptação e Aprendizado Contínuo</h4>
+                        <p>Em um mundo em constante mudança, flexibilidade cognitiva e aprendizado ao longo da vida são diferenciais. A disposição para sair da zona de conforto e buscar conhecimento contínuo está associada a crescimento na carreira. Itens aqui foram inspirados em pesquisas sobre mindset de crescimento e abertura à experiência.</p>
+                    </div>
+                    <div class="science-item">
+                        <h4>Tomada de Decisão e Resolução de Problemas</h4>
+                        <p>Decisões eficazes e solução proativa de problemas evitam consequências negativas. Pessoas com maior competência decisória relatam menos eventos de vida negativos ligados a más decisões. Baseamos estas perguntas em instrumentos como o Adult Decision-Making Competence e inventários de resolução de problemas, medindo desde a indecisão até a impulsividade.</p>
+                    </div>
+                    <div class="science-item">
+                        <h4>Relacionamentos e Habilidades Sociais</h4>
+                        <p>Nossas conexões sociais influenciam oportunidades e bem-estar. Habilidades sociais desenvolvidas desde cedo estão ligadas a vidas adultas mais saudáveis e bem-sucedidas. Aqui usamos conceitos de inteligência social, comunicação e confiança interpessoal para avaliar possíveis autossabotagens em relações.</p>
+                    </div>
+                    <div class="science-item">
+                        <h4>Gestão do Tempo e Produtividade</h4>
+                        <p>O mau gerenciamento do tempo é uma forma comum de autossabotagem. Uma meta-análise confirma que boa gestão do tempo está moderadamente ligada a melhor desempenho no trabalho, notas acadêmicas mais altas e maior bem-estar – enquanto a procrastinação crônica eleva estresse e prejudica resultados. As perguntas foram elaboradas com base em escalas de procrastinação e produtividade pessoal.</p>
+                    </div>
+                    <div class="science-item">
+                        <h4>Saúde Física e Bem-Estar</h4>
+                        <p>Negligenciar a saúde é "dar um tiro no pé" a longo prazo. Atividade física regular, por exemplo, melhora a cognição, o humor e reduz ansiedade, aumentando sua energia para perseguir objetivos. Aqui avaliamos hábitos de sono, alimentação, autocuidado e manejo de estresse, alinhados a questionários de saúde bem-estar usados em pesquisas.</p>
+                    </div>
+                    <div class="science-item">
+                        <h4>Consciência e Ilusão</h4>
+                        <p>Esta seção, inspirada na ideia de "banir a ilusão usando a mesma mente impregnada da ilusão", examina seu nível de autoconsciência e possíveis viéses cognitivos. Tendências mentais como negar erros ou se iludir podem atrapalhar decisões e crescimento. Lembre-se: viéses cognitivos são falhas de raciocínio que nos levam a interpretações imprecisas da realidade. As perguntas investigam o quanto você reconhece suas próprias limitações, desafia suas crenças e evita a autoenganação.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h3><i class="fas fa-info-circle"></i> Instruções</h3>
+                <p>Para cada afirmação, atribua uma nota de 1 a 5 de acordo com o quanto ela descreve seu comportamento ou pensamento habitual.</p>
+                <div class="scale-explanation">
+                    <div class="scale-item">
+                        <span class="scale-number">1</span>
+                        <span class="scale-text">Discordo totalmente / Nunca</span>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-number">2</span>
+                        <span class="scale-text">Discordo em parte / Raramente</span>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-number">3</span>
+                        <span class="scale-text">Neutro (nem concordo nem discordo) / Às vezes</span>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-number">4</span>
+                        <span class="scale-text">Concordo em parte / Frequentemente</span>
+                    </div>
+                    <div class="scale-item">
+                        <span class="scale-number">5</span>
+                        <span class="scale-text">Concordo totalmente / Sempre</span>
+                    </div>
+                </div>
+                <p class="important-note">Seja sincero em relação a como você <strong>realmente age ou pensa</strong> (e não como gostaria de ser). Lembre que não há julgamentos – o objetivo é tomar consciência de possíveis autossabotagens para poder corrigi-las.</p>
+            </div>
+
+            <div class="action-wrapper">
+                <button id="start-btn" class="btn-primary">Iniciar Questionário</button>
+                <div class="save-load-info">
+                    <p>
+                        <i class="fas fa-save"></i> Suas respostas serão salvas automaticamente no seu navegador.
+                        <br>
+                        <i class="fas fa-clock"></i> Tempo estimado: 10-15 minutos (50 perguntas)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Container de progresso -->
+        <div id="progress-container" class="hidden">
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+            <div class="progress-info">
+                <span id="progress-text">0%</span>
+                <span id="question-counter">Pergunta 0 de 50</span>
+            </div>
+        </div>
+
+        <!-- Seção do questionário -->
+        <section id="questionnaire" class="card hidden">
+            <div id="category-indicator">
+                <span id="current-category">Categoria</span>
+                <div class="category-index">
+                    <span id="category-number">1</span>/<span id="total-categories">9</span>
+                </div>
+            </div>
+            
+            <div id="question-container">
+                <!-- As perguntas serão inseridas aqui via JavaScript -->
+            </div>
+
+            <div class="navigation-buttons">
+                <button id="prev-btn" class="btn-secondary" disabled>Voltar</button>
+                <button id="next-btn" class="btn-primary">Próxima</button>
+            </div>
+        </section>
+
+        <!-- Seção de resultados -->
+        <section id="results" class="card hidden">
+            <h2>Seus Resultados</h2>
+            <p class="subtitle">Análise de sua pontuação de autossabotagem</p>
+
+            <div id="results-overview">
+                <div class="chart-container">
+                    <canvas id="results-chart"></canvas>
+                </div>
+
+                <div class="overall-score">
+                    <h3>Pontuação Geral</h3>
+                    <div class="score-meter">
+                        <div id="score-fill"></div>
+                    </div>
+                    <p id="overall-score-text">Sua pontuação total: <span id="total-score">0</span> de 250 pontos possíveis</p>
+                    <div id="overall-interpretation"></div>
+                </div>
+            </div>
+
+            <div class="detailed-results">
+                <h3>Resultados Detalhados por Categoria</h3>
+                <div id="categories-results">
+                    <!-- Resultados por categoria serão inseridos aqui via JavaScript -->
+                </div>
+            </div>
+
+            <div class="recommendations">
+                <h3>Recomendações Personalizadas</h3>
+                <p>Com base em suas pontuações mais altas, aqui estão algumas recomendações para ajudar a reduzir sua autossabotagem:</p>
+                <div id="recommendations-list">
+                    <!-- Recomendações personalizadas serão inseridas aqui via JavaScript -->
+                </div>
+            </div>
+            
+            <div class="next-steps">
+                <h3>Próximos Passos</h3>
+                <p>Este questionário é apenas o primeiro passo para a consciência e mudança. Considere as seguintes ações:</p>
+                <ul>
+                    <li>Escolha uma ou duas áreas de foco iniciais (onde sua pontuação foi mais alta)</li>
+                    <li>Estabeleça pequenas metas verificáveis para mudar comportamentos nessas áreas</li>
+                    <li>Considere ler livros ou artigos sobre os temas mais problemáticos</li>
+                    <li>Se necessário, procure ajuda profissional (coach, terapeuta, mentor)</li>
+                    <li>Repita este questionário em 3-6 meses para verificar seu progresso</li>
+                </ul>
+            </div>
+
+            <div class="action-buttons">
+                <button id="restart-btn" class="btn-secondary">Refazer Questionário</button>
+                <button id="save-results-btn" class="btn-primary">Salvar Resultados (PDF)</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Questionário de Autoavaliação de Autossabotagem baseado em evidências científicas</p>
+            <p>Os resultados são armazenados apenas localmente no seu navegador e não são compartilhados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="questions.js"></script>
+    <script src="recommendations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
